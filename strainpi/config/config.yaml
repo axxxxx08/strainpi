@@ -112,6 +112,16 @@ params:
       do: True
       aligner: ["bowtie2", "strobealign"]
 
+  instrain:
+    threads: 8
+    index_prefix: "/home/jiezhu/databases/ecogenomics/MagIC/ELM-MAGs/v1.0/db_strobealign/MagIC_OTUs.fna"
+    ref_single:
+      do: False
+      stb_file: "/mnt/hogwarts/liuxin/3.instrain/0.bowtie/scaffoletobin.stb"
+    ref_database:
+      do: True
+      stb_file: "/mnt/hogwarts/liuxin/3.instrain/0.bowtie/scaffoletobin.stb"
+
 
 output:
   simulate: "results/00.simulate"
@@ -121,6 +131,7 @@ output:
   qcreport: "results/03.qcreport"
   alignment: "results/04.alignment"
   identify: "results/05.identify"
+  instrain: "results/06.instrain"
 
 
 envs:

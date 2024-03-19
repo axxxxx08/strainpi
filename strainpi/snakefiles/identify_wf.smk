@@ -50,6 +50,7 @@ include: "../rules/trimming.smk"
 include: "../rules/rmhost.smk"
 include: "../rules/qcreport.smk"
 include: "../rules/alignment.smk"
+include: "../rules/instrain.smk"
 
 
 rule all:
@@ -58,4 +59,5 @@ rule all:
         rules.trimming_all.input,
         rules.rmhost_all.input,
         rules.qcreport_all.input,
-        rules.alignment_all.input
+        rules.alignment_all.input,
+        rules.instrain_all.input

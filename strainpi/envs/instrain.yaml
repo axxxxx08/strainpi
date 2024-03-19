@@ -1,0 +1,8 @@
+channels:
+  - conda-forge
+dependencies:
+  - instrain
+  - bioconda::samtools==1.9
+  - ca-certificates
+  - certifi
+  - openssl
