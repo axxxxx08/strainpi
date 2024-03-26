@@ -11,7 +11,7 @@ if config["params"]["instrain"]["ref_single"]["do"]:
         params:
             bam_file = os.path.join(config["output"]["alignment"], "bam/bowtie2/{sample}/pe/sorted.bam"),
             profile_dir = os.path.join(config["output"]["instrain"], "instrain_single/{sample}"),
-            stb_file = config["params"]["instrain"]["ref_database"]["scaffoletobin.stb"],
+            stb_file = config["params"]["instrain"]["ref_single"]["stb_file"],
             index_prefix = config["params"]["instrain"]["index_prefix"]
         priority:
             10
@@ -58,7 +58,7 @@ if config["params"]["instrain"]["ref_database"]["do"]:
         params:
             bam_file = os.path.join(config["output"]["alignment"], "bam/bowtie2/{sample}/pe/sorted.bam"),
             profile_dir = os.path.join(config["output"]["instrain"], "instrain_refdb/{sample}"),
-            stb_file = config["params"]["instrain"]["ref_database"]["scaffoletobin.stb"],
+            stb_file = config["params"]["instrain"]["ref_database"]["stb_file"],
             index_prefix = config["params"]["instrain"]["index_prefix"]
         priority:
             10
