@@ -116,11 +116,11 @@ params:
     threads: 8
     index_prefix: "/home/jiezhu/databases/ecogenomics/MagIC/ELM-MAGs/v1.0/db_strobealign/MagIC_OTUs.fna"
     ref_single:
-      do: False
-      stb_file: "/mnt/hogwarts/liuxin/3.instrain/0.bowtie/scaffoletobin.stb"
-    ref_database:
       do: True
-      stb_file: "/mnt/hogwarts/liuxin/3.instrain/0.bowtie/scaffoletobin.stb"
+      stb_file: "/home/liuxin/Projects/17_bigmommy/B.longum.stb"
+    ref_database:
+      do: False
+      stb_file: "/home/liuxin/Projects/17_bigmommy/scaffoletobin.stb"
 
 
 output:

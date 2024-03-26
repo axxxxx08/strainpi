@@ -1,7 +1,7 @@
 if config["params"]["instrain"]["ref_single"]["do"]:
     rule single_instrain_profile:
         input:
-            rules.raw_prepare_reads.output
+            os.path.join(config["output"]["alignment"], "bam/strobealign/{sample}/{sample}.json")
         output:
             os.path.join(config["output"]["instrain"], "instrain_single/{sample}/{sample}.finished")
         log:
@@ -21,6 +21,8 @@ if config["params"]["instrain"]["ref_single"]["do"]:
             config["envs"]["instrain"]
         shell:
             '''
+            BAM=$(jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
+
             inStrain profile \
             {params.bam_file} \
             {index_prefix} \
@@ -46,7 +48,7 @@ else:
 if config["params"]["instrain"]["ref_database"]["do"]:
     rule database_instrain_profile:
         input:
-            rules.raw_prepare_reads.output
+            os.path.join(config["output"]["alignment"], "bam/strobealign/{sample}/{sample}.json")
         output:
             os.path.join(config["output"]["instrain"], "instrain_refdb/{sample}/{sample}.finished")
         log:
@@ -66,6 +68,8 @@ if config["params"]["instrain"]["ref_database"]["do"]:
             config["envs"]["instrain"]
         shell:
             '''
+            BAM=$(jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
+
             inStrain profile \
             {params.bam_file} \
             {index_prefix} \
