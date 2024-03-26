@@ -21,14 +21,15 @@ if config["params"]["instrain"]["ref_single"]["do"]:
             config["envs"]["instrain"]
         shell:
             '''
-            BAM=$(jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
+            BAM=$(/home/liuxin/mambaforge/envs/snakemake/bin/jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
 
-            inStrain profile \
+            inStrain \
+            profile \
             {params.bam_file} \
-            {index_prefix} \
+            {params.index_prefix} \
             -p {threads} \
             -o {params.profile_dir} \
-            -s scaffoletobin.stb \
+            -s {params.stb_file} \
             --skip_plot_generation \
             2> {log}
 
@@ -68,15 +69,15 @@ if config["params"]["instrain"]["ref_database"]["do"]:
             config["envs"]["instrain"]
         shell:
             '''
-            BAM=$(jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
+            BAM=$(/home/liuxin/mambaforge/envs/snakemake/bin/jq -r -M '.BAM_PE' {input} | sed 's/^null$//g')
 
             inStrain profile \
             {params.bam_file} \
-            {index_prefix} \
+            {params.index_prefix} \
             -p {threads} \
             -o {params.profile_dir} \
             --database_mode \
-            -s scaffoletobin.stb \
+            -s {params.stb_file} \
             --skip_plot_generation \
             2> {log}
 
