@@ -92,3 +92,15 @@ if config["params"]["instrain"]["ref_database"]["do"]:
 else:
     rule database_instrain_profile_all:
         input:
+
+
+rule instrain_all:
+    input:
+        rules.single_instrain_profile_all.input,
+        rules.database_instrain_profile_all.input
+    
+
+localrules:
+    single_instrain_profile_all,
+    database_instrain_profile_all,
+    instrain_all
