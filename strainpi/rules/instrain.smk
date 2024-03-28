@@ -30,6 +30,7 @@ if config["params"]["instrain"]["ref_single"]["do"]:
             -p {threads} \
             -o {params.profile_dir} \
             -s {params.stb_file} \
+            --database_mode \
             --skip_plot_generation \
             2> {log}
 
