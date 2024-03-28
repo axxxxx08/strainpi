@@ -114,13 +114,14 @@ params:
 
   instrain:
     threads: 8
-    index_prefix: "/home/jiezhu/databases/ecogenomics/MagIC/ELM-MAGs/v1.0/db_strobealign/MagIC_OTUs.fna"
     ref_single:
       do: True
       stb_file: "/home/liuxin/Projects/17_bigmommy/B.longum.stb"
+      index_prefix: "/home/liuxin/Projects/17_bigmommy/B.longum.fa"
     ref_database:
       do: False
       stb_file: "/home/liuxin/Projects/17_bigmommy/scaffoletobin.stb"
+      index_prefix: "/home/jiezhu/databases/ecogenomics/MagIC/ELM-MAGs/v1.0/db_strobealign/MagIC_OTUs.fna"
 
 
 output:
